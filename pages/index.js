@@ -38,6 +38,10 @@ export default function Home() {
     }, image_change_timing);
 
   }, []);
+  /////////////////////////////////////////////////////
+  
+
+
   // THis is the main return that renders the HTML
   return (
     <>
