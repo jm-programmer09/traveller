@@ -22,7 +22,7 @@ export default function Home() {
 
   let image_main = 2; // keep this as 2
   let max_image = 5;
-  let image_change_timing = 1000;
+  let image_change_timing = 5000;
   // This is the useEffect element that will change what each style will look like
   useEffect(() => {
     const wait = setInterval(function () {
