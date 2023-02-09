@@ -4,23 +4,30 @@ import styles from '@/styles/Home.module.css';
 import { useEffect, useState } from 'react';
 
 // Images
-import first from "@/public/background3.jpg";
-import second from "@/public/background1.jpg";
+import first from "@/public/background1.jpg";
+import second from "@/public/background3.jpg";
+import third from "@/public/background4.jpg";
 
 // THis is teh main function
 export default function Home() {
   // This is setting the useState variables that will allow for me to change the classList and make it so that the photos show and hide
   const [image1, setImage1] = useState(`${styles.background_image}`);
   const [image2, setImage2] = useState(`${styles.background_hide}`);
+  const [image3, setImage3] = useState(`${styles.background_hide}`);
 
-  let image_main = 1;
-  let max_image = 1;
-  let image_change_timing = 3000;
+  let image_main = 2; // keep this as 2
+  let max_image = 3;
+  let image_change_timing = 4000;
   // This is the useEffect element that will change what each style will look like
   useEffect(() => {
     const wait = setInterval(function () {
-      
-      clearInterval(wait);
+      // we have to use an eval because I need to import a variable and use it as a function
+      eval(`setImage${image_main}("${styles.background_image}")`);
+      // this is making the next image show above, and below is hiding the last one
+      if (image_main == 1) eval(`setImage${max_image}("${styles.background_hide}")`)
+      else eval(`setImage${image_main-1}("${styles.background_hide}")`);
+      if (image_main >= max_image) image_main = 1
+      else image_main++;
     }, image_change_timing);
 
   }, []);
@@ -46,6 +53,12 @@ export default function Home() {
             alt="background image"
             height={720}
             className={image2}
+          />
+          <Image 
+            src={third}
+            alt="background image"
+            height={720}
+            className={image3}
           />
         </header>
         {/* this is all the main text and input things for the header, as if it is in the header than it changes how the images are shown */}
