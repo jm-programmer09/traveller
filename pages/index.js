@@ -9,10 +9,16 @@ import second from "@/public/background3.jpg";
 import third from "@/public/background4.jpg";
 import fourth from "@/public/background2.jpg";
 import search_icon from "@/public/search.svg";
+import white_search from "@/public/white_search.svg";
 
 const db = require("./db.json");
 // TODO
 // If u really want, make it so that the slider is animated
+// make it so that a button called explore is shown above the html cards
+// Have it as an ::after element
+// make an onclick thing for the elements that show
+
+// Search bar function
 function SearchBar(searchcontent){
   // This is the API that handles what the return is for the search
   const element_list = [];
@@ -59,14 +65,17 @@ function SearchBar(searchcontent){
         <div className={styles.travel_card}>
           <Image 
             src={`/travel/${image}`}
-            height={150}
+            draggable={false}
+            width={160}
+            height={90}
+            className={styles.travel_icon}
             alt={title}
           />
-          <div className={styles.card_title}>
-            {title} 
+          <div className={styles.card_location}>
+            {location} 
           </div>
-          <div className={styles.card_description}>
-            {location}
+          <div className={styles.card_title}>
+            {title}
           </div>
         </div>
       </>
@@ -93,6 +102,7 @@ function SearchBar(searchcontent){
     </>
   )
 };
+
 // THis is teh main function
 export default function Home() {
   // This is setting the useState variables that will allow for me to change the classList and make it so that the photos show and hide
@@ -119,16 +129,26 @@ export default function Home() {
     }, image_change_timing);
   }, []);
 
+  const [search_results, setResults] = useState(
+    <>
+      <div className={styles.search_results}>
+        
+      </div>
+    </>
+  );
   // this is for the search bar
-  const [search_results, changeResults] = useState(<></>);
   const search_db = (event) => {
     const search_bar = document.getElementById("search_bar");
-    if (event.key.toLowerCase() != "enter") return false;
+    if (event.key.toLowerCase() != "enter" || search_bar.value == undefined || search_bar.value == "") return false;
     // ELSE
-    // this is setting the return value as the html data shown to the user
-    changeResults(SearchBar(String(search_bar.value).toLowerCase()));
+    setResults(SearchBar(String(search_bar.value).toLowerCase()));
   };
-
+  // For scrolling down to the input element
+  const scrollSearch = () => {
+    const searchbar = document.getElementById("search_bar");
+    searchbar.scrollIntoView({behavior: "smooth"});
+    searchbar.focus();
+  };
 
   // THis is the main return that renders the HTML
   return (
@@ -139,55 +159,68 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <header className={styles.main}>
+      <header className={styles.main}>
+        <Image 
+          src={first}
+          alt="background image"
+          height={720}
+          className={image1}
+          priority
+        />
+        <Image 
+          src={second}
+          alt="background image"
+          height={720}
+          className={image2}
+          priority
+        />
+        <Image 
+          src={third}
+          alt="background image"
+          height={720}
+          className={image3}
+          priority
+        />
+        <Image 
+          src={fourth}
+          alt='background image'
+          height={720}
+          className={image4}
+          priority
+        />
+      </header>
+      {/* this is all the main text and input things for the header, as if it is in the header than it changes how the images are shown */}
+      <div className={styles.main_hover}>
+          {/* this is the main title that is meant to catch the readers eye */}
+          <div className={styles.main_title}>
+            Travel The World
+          </div>
           <Image 
-            src={first}
-            alt="background image"
-            height={720}
-            className={image1}
+            src={white_search}
+            width={35}
+            height={35}
+            draggable={false}
+            priority={true}
+            onClick={scrollSearch}
+            title="Search"
+            className={styles.search_image}
           />
-          <Image 
-            src={second}
-            alt="background image"
-            height={720}
-            className={image2}
-          />
-          <Image 
-            src={third}
-            alt="background image"
-            height={720}
-            className={image3}
-          />
-          <Image 
-            src={fourth}
-            alt='background image'
-            height={720}
-            className={image4}
-          />
-        </header>
-        {/* this is all the main text and input things for the header, as if it is in the header than it changes how the images are shown */}
-        <div className={styles.main_hover}>
-            {/* this is the main title that is meant to catch the readers eye */}
-            <div className={styles.main_title}>
-              Travel The World
-            </div>
-            <div className={styles.input_parent}>
-            <div className={styles.search_icon}>
-                <Image 
-                  src={search_icon}
-                  alt="Search"
-                  width={20}
-                  height={20}
-                  title="Search"
-                />
-              </div>
-                <input id="search_bar" className={styles.search_bar} onKeyDown={search_db} placeholder="Find you next destination..." spellCheck={false}/>
-            </div>
+      </div>
+      <div className={styles.search_title}>
+        <div className={styles.input_parent}>
+          <div className={styles.search_icon}>
+            <Image 
+              src={search_icon}
+              alt="Search"
+              width={20}
+              height={20}
+              title="Search"
+            />
+          </div>
+          <input id="search_bar" className={styles.search_bar} onKeyDown={search_db} placeholder="Find your next destination..." spellCheck={false}/>
         </div>
-        {/* this is where the info on the serach results is shown once it has the info */}
-        {search_results}
-      </main>
+      </div>
+      {search_results}
     </>
   )
 };

@@ -1,12 +1,77 @@
-.search_results_parent {
-  
+.search_image {
+  background-color: transparent;
+  z-index: 30;
+  fill:white;
+  justify-content: center;
+  position: absolute;
+  top: 270px;
+  padding: 5px;
 }
+.search_image:hover {
+  background-color: rgb(230, 230, 230, 0.2);
+  border-radius: 100%;
+  cursor: pointer;
+}
+.search_title {
+  position: relative;
+  top: 0px;
+  left: 0px; width: 100%;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+}
+/* search resutls stuff */
+.search_results_parent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 20px;
+  min-height: 400px;
+}
+.travel_card {
+  width: 200px;
+  height: 300px;
+  background-color: white;
+  padding: .4em;
+  border-radius: 6px;
+  box-shadow: 4px 3px 12px 2px grey;
+}
+.travel_card:hover {
+  cursor: pointer;
+  transform: scale(1.01);
+}
+.travel_icon {
+  width: 100%;
+  height: 70%;
+  border-radius: 6px 6px 0px 0px;
+}
+.travel_image:hover {
+  transform: scale(0.98);
+}
+.card_location {
+  font-size: 0.7em;
+  font-weight: 600;
+  color: rgb(63, 121, 230);
+  padding: 10px 7px 0px;
+}
+.card_title {
+  font-weight: 600;
+  color: rgb(88, 87, 87);
+  padding: 7px;
+}
+.search_results {
+  justify-content: center;
+  min-height: 400px;
+}
+
+/* top stuff */
 .main {
   z-index: -5;
   width: 100%;
   margin: 0px; 
   padding: 0px;
   overflow: hidden;
+  margin-bottom: 10px;
 }
 .main::after {
   content: '';
@@ -53,16 +118,15 @@
   width: 100%;
   left: 0px;
 }
+/* for the searching part */
 .input_parent {
-  position: absolute;
-  top: 260px;
   display: flex;
   gap: 0px;
-  border-radius: 20px;
-  width: 420px;
+  width: 60%;
   height: 40px;
   background-color: white;
   align-items: center;
+  border-radius: 0px;
 }
 .search_bar {
   flex-grow: 1;
@@ -92,5 +156,6 @@
   align-items: center;
 }
 .input_parent:focus-within  {
-  box-shadow: -1px 3px 5px 0px black;
+  /* box-shadow: -1px 3px 5px 0px black; */
+  outline: 1px solid black;
 }
