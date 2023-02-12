@@ -1,0 +1,17 @@
+{
+  "elements": [
+    {
+      "title": "Apartments On Maggie",
+      "location": "Australia, Magnetic Island",
+      "check_location": ["australia", "magnetic", "island"],
+      "image": "apartments_on_maggie.jpeg",
+      "tags": [
+        "tropical",
+        "island",
+        "apartment",
+        "maggie"
+      ]
+    }
+    
+  ]
+}

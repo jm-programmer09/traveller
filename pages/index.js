@@ -8,18 +8,90 @@ import first from "@/public/background1.jpg";
 import second from "@/public/background3.jpg";
 import third from "@/public/background4.jpg";
 import fourth from "@/public/background2.jpg";
+import search_icon from "@/public/search.svg";
 
-// This is for the firebase (aka the database)
-// These are the settings to connect (for authorisation). The process.env is found in the .env.local file
+const db = require("./db.json");
 // TODO
 // If u really want, make it so that the slider is animated
+function SearchBar(searchcontent){
+  // This is the API that handles what the return is for the search
+  const element_list = [];
 
+  for (let sites of db.elements){
+    // Checking the tags
+    // We have to loop through all of the tags
+    let found = false;
+    for (let tags of sites.tags){
+      if (searchcontent.includes(tags)){
+        element_list.push(sites);
+        found = true;
+        break;
+      };
+    };
+    // THis is making sure that it doesnt have multiple times that the sites is added to what is going to be displayed
+    if (found) continue;
+    // THis is for cheekcing the title
+    if (searchcontent.includes(sites.title.toLowerCase()) || sites.title.toLowerCase().includes(searchcontent)){
+      element_list.push(sites);
+      // we dont have to use found in this one because we couldnt use continue in the loop before
+      // because or else the continue would have just affected the first for loop that it was called in, not the outer one which we were tyring to effect
+      continue;
+    };
+    // THis is then checking the location
+    // found wont be needed to be used here, because no matter whether something was found or not we will continue
+    for (let locations of sites.check_location){
+      if (searchcontent.includes(locations)){
+        element_list.push(sites);
+        break;
+      };
+    };
+    // No need to say continue because it does that anyway
+  };
 
-function TravelElement(){
+  // this is for rendering specific elements glovally
+  function TravelElement(info){
+    const title = info.title;
+    const location = info.location;
+    const image = info.image;
+    // Returning this as JSX
+    return (
+      <>
+        <div className={styles.travel_card}>
+          <Image 
+            src={`/travel/${image}`}
+            height={150}
+            alt={title}
+          />
+          <div className={styles.card_title}>
+            {title} 
+          </div>
+          <div className={styles.card_description}>
+            {location}
+          </div>
+        </div>
+      </>
+    );
+  };
+
+  if (element_list.length >= 1){
+    return (
+      <>
+        <div className={styles.search_results_parent}>
+          {element_list.map((element_info) => {
+            return TravelElement(element_info);
+          })}
+        </div>      
+      </>
+    );
+  };
+  // ELSE; we dont need to do an else because the last if statement ends with a return
   return (
     <>
+      <div className={styles.search_results}>
+        <div className={styles.no_results}>No Results...</div>
+      </div>
     </>
-  );
+  )
 };
 // THis is teh main function
 export default function Home() {
@@ -46,11 +118,16 @@ export default function Home() {
       else if (image_main < max_image) { image_main++;} 
     }, image_change_timing);
   }, []);
-  /////////////////////////////////////////////////////
-  // This is for loading the database
-  useEffect(() => {
-    
-  }, []);
+
+  // this is for the search bar
+  const [search_results, changeResults] = useState(<></>);
+  const search_db = (event) => {
+    const search_bar = document.getElementById("search_bar");
+    if (event.key.toLowerCase() != "enter") return false;
+    // ELSE
+    // this is setting the return value as the html data shown to the user
+    changeResults(SearchBar(String(search_bar.value).toLowerCase()));
+  };
 
 
   // THis is the main return that renders the HTML
@@ -95,7 +172,21 @@ export default function Home() {
             <div className={styles.main_title}>
               Travel The World
             </div>
+            <div className={styles.input_parent}>
+            <div className={styles.search_icon}>
+                <Image 
+                  src={search_icon}
+                  alt="Search"
+                  width={20}
+                  height={20}
+                  title="Search"
+                />
+              </div>
+                <input id="search_bar" className={styles.search_bar} onKeyDown={search_db} placeholder="Find you next destination..." spellCheck={false}/>
+            </div>
         </div>
+        {/* this is where the info on the serach results is shown once it has the info */}
+        {search_results}
       </main>
     </>
   )
