@@ -91,6 +91,9 @@
   padding: 0px;
   overflow: hidden;
   height: 720px;
+  background-image: url("../public/background2.jpg");
+  object-fit: fill;
+  background-size: cover;
 }
 .main::after {
   content: '';
