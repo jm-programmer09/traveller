@@ -90,6 +90,7 @@
   margin: 0px; 
   padding: 0px;
   overflow: hidden;
+  height: 720px;
 }
 .main::after {
   content: '';
@@ -99,6 +100,31 @@
   position: absolute;
   top: 0px; left: 0px;
   z-index: 2;
+}
+@keyframes background_animate {
+  0% {
+    backgorund-image: url("../public/background1.jpg");
+  }
+  25% {
+    background-image: url("../public/background2.jpg");
+  }
+  50% {
+    background-image: url("../public/background3.jpg");
+  }
+  75% {
+    background-image: url("../public/background4.jpg");
+  }
+  100% {
+    background-image: url("../public/background1.jpg");
+  }
+}
+.backStage {
+  height: 100%;
+  object-fit: fill;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../public/background1.jpg");
+  animation: background_animate linear 40s infinite;
 }
 .background_image {
   object-fit: fill;

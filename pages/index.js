@@ -4,10 +4,6 @@ import styles from '@/styles/Home.module.css';
 import { useEffect, useState } from 'react';
 
 // Images
-import first from "@/public/background1.jpg";
-import second from "@/public/background3.jpg";
-import third from "@/public/background4.jpg";
-import fourth from "@/public/background2.jpg";
 import search_icon from "@/public/search.svg";
 import white_search from "@/public/white_search.svg";
 
@@ -105,30 +101,6 @@ function SearchBar(searchcontent){
 
 // THis is teh main function
 export default function Home() {
-  // This is setting the useState variables that will allow for me to change the classList and make it so that the photos show and hide
-  const [image1, setImage1] = useState(`${styles.background_image}`);
-  const [image2, setImage2] = useState(`${styles.background_hide}`);
-  const [image3, setImage3] = useState(`${styles.background_hide}`);
-  const [image4, setImage4] = useState(`${styles.background_hide}`);
-
-  let image_main = 2; // keep this as 2
-  let max_image = 5;
-  let image_change_timing = 5000;
-  // This is the useEffect element that will change what each style will look like
-  useEffect(() => {
-    const wait = setInterval(function () {
-      // we have to use an eval because I need to import a variable and use it as a function
-      eval(`setImage${image_main}("${styles.background_image}")`);
-      // this is making the next image show above, and below is hiding the last one
-      if (image_main == 1) eval(`setImage${max_image-1}("${styles.background_hide}")`)
-      else eval(`setImage${image_main-1}("${styles.background_hide}")`);
-
-      
-      if (image_main+1 == max_image) { image_main = 1;}
-      else if (image_main < max_image) { image_main++;} 
-    }, image_change_timing);
-  }, []);
-
   const [search_results, setResults] = useState(
     <>
       <div className={styles.search_results}>
@@ -160,7 +132,7 @@ export default function Home() {
         <link rel="icon" href="/icon.ico" />
       </Head>
       <header className={styles.main}>
-        <Image 
+        {/* <Image 
           src={first}
           alt="background image"
           height={720}
@@ -187,7 +159,9 @@ export default function Home() {
           height={720}
           className={image4}
           priority
-        />
+        /> */}
+        {/* above is what JSX was used before i managed to complete the animation with the css */}
+        <div className={styles.backStage}></div>
       </header>
       {/* this is all the main text and input things for the header, as if it is in the header than it changes how the images are shown */}
       <div className={styles.main_hover}>
@@ -220,6 +194,7 @@ export default function Home() {
               title="Search"
             />
           </div>
+          {/* thsi si where the user searches stuff up */}
           <input id="search_bar" className={styles.search_bar} onKeyDown={search_db} placeholder="Find your next destination..." spellCheck={false}/>
         </div>
       </div>
