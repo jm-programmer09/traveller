@@ -5,11 +5,51 @@
       "location": "Australia, Magnetic Island",
       "check_location": ["australia", "magnetic", "island"],
       "image": "apartments_on_maggie.jpeg",
+      "url": "https://www.bestofmagnetic.com/complex/maggies-beachfront-apartments/",
       "tags": [
         "tropical",
         "island",
         "apartment",
         "maggie"
+      ]
+    },
+    {
+      "title": "The Plaza Hotel",
+      "location": "USA, New York",
+      "check_location": ["usa", "new york"],
+      "image": "the_plaza.jfif",
+      "url": "https://www.theplazany.com/",
+      "tags": [
+        "us",
+        "usa",
+        "hotel",
+        "america"
+      ]
+    },
+    {
+      "title": "The Crown Hotel",
+      "location": "Australia, Sydney",
+      "check_location": ["australia", "sydney"],
+      "image": "the_crown_sydney.jpg",
+      "url": "https://www.crownsydney.com.au/",
+      "tags": [
+        "australia",
+        "hotel",
+        "crown",
+        "sydney"
+      ]
+    }, 
+    {
+      "title": "King David Jerusalem Hotel",
+      "location": "Jerusalem",
+      "check_location": ["jerusalem"],
+      "image": "kingdavid.webp",
+      "url": "https://www.danhotels.com/JerusalemHotels/KingDavidJerusalemHotel",
+      "tags": [
+        "jerusalem",
+        "hotel",
+        "king",
+        "david"
       ]
     }
   ]

@@ -17,7 +17,6 @@ const db = require("./db.json");
 // make it so that a button called explore is shown above the html cards
 // Have it as an ::after element
 // make an onclick thing for the elements that show
-
 // Search bar function
 function SearchBar(searchcontent){
   // This is the API that handles what the return is for the search
@@ -59,10 +58,11 @@ function SearchBar(searchcontent){
     const title = info.title;
     const location = info.location;
     const image = info.image;
+    const url = info.url;
     // Returning this as JSX
     return (
       <>
-        <div className={styles.travel_card}>
+        <a href={url} className={styles.travel_card}>
           <Image 
             src={`/travel/${image}`}
             draggable={false}
@@ -77,7 +77,7 @@ function SearchBar(searchcontent){
           <div className={styles.card_title}>
             {title}
           </div>
-        </div>
+        </a>
       </>
     );
   };
