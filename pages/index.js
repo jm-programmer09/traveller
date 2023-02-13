@@ -1,7 +1,9 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '@/styles/Home.module.css';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+// We dont need useEffect anymore because we got rid of the Javascript animation on document load
+// FYI the import above used to look like: import { useState, useEffect } from 'react';
 
 // Images
 import search_icon from "@/public/search.svg";
@@ -179,7 +181,7 @@ export default function Home() {
           <div className={styles.main_title}>
             Travel The World
 
-            <div className={styles.search_image_parent}>
+            <div className={styles.search_image_parent} onClick={scrollSearch}>
               <Image 
                 src={white_search}
                 width={35}
