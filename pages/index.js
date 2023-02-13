@@ -9,11 +9,12 @@ import white_search from "@/public/white_search.svg";
 
 const db = require("./db.json");
 // TODO
-// If u really want, make it so that the slider is animated
-// make it so that a button called explore is shown above the html cards
-// Have it as an ::after element
-// make an onclick thing for the elements that show
-// Search bar function
+
+/**
+ * 
+ * @param {string} searchcontent the search query
+ * @return {JSX} Returning the output from the search
+ */
 function SearchBar(searchcontent){
   // This is the API that handles what the return is for the search
   const element_list = [];
@@ -99,7 +100,16 @@ function SearchBar(searchcontent){
   )
 };
 
-// THis is teh main function
+/**
+ * @param {undefined} - params required
+ * @returns {JSX} Returning the JSX (html like) data
+*/
+
+// THis is the main function
+// When Next JS runs, it compiles this code into Browser readable code, so the JSX is turned into something else completely
+// That is why if you tried to use this code in a .js file that is <script src="yourfile.js"></script>, it will not work and willl give you many errors
+// Also the import is like doing require(), though for module files like this one, you can use import instead (makes it simpler and more readable)
+// I would have liked to have made this with Typescript, however, if most people are already struggling understanding what this is doing, then I doubt a type-strict language like typescript would help that matter
 export default function Home() {
   const [search_results, setResults] = useState(
     <>

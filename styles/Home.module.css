@@ -1,3 +1,19 @@
+/* FYI whoever is reading this code:
+  The reason why the code in Home.module.css does not have anything other than media properties or standalone classes is because of next JS's compiling.
+  One of the features of Next JS is that it changes what the css classes name from what you have called them into jibberish to make it so that there are no CSS collisions
+  Personally, I dont really like it because then you cannot do specific things like:
+  div#element > input.username[type="password"] {}
+  or the @media constructor
+  So that is why I have instead relied on having quite long class names, so that I get the idea of what the class does
+  without it overlapping with another class properties
+*/
+
+
+
+
+
+
+
 .search_image {
   background-color: transparent;
   z-index: 50;
