@@ -1,24 +1,42 @@
 .search_image {
   background-color: transparent;
-  z-index: 30;
+  z-index: 50;
   fill:white;
-  justify-content: center;
-  position: absolute;
-  top: 270px;
   padding: 5px;
 }
-.search_image:hover {
-  background-color: rgb(230, 230, 230, 0.2);
+@keyframes backgroundHover {
+  from {background-color: transparent;}
+  to {background-color: rgb(230, 230, 230, 0.2);}
+}
+.search_image_parent {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+  height: 100px;
+  z-index: 200;
+  align-items: center;
+}
+.search_image_parent:hover .search_image {
   border-radius: 100%;
   cursor: pointer;
+  animation: backgroundHover linear 250ms forwards;
+}
+@keyframes arrow_down {
+  from {transform: translateY(0px);}
+  to {transform: translateY(60px);}
+}
+.search_image_parent:hover::after {
+  content: url("../public/down_arrow.svg");
+  position: absolute;
+  z-index: 30;
+  animation: arrow_down linear 300ms forwards;
 }
 .search_title {
   position: relative;
   top: 0px;
   left: 0px; width: 100%;
-  padding: 5px;
+  border-bottom: 1px solid black;
   display: flex;
-  justify-content: center;
 }
 /* search resutls stuff */
 .search_results_parent {
@@ -72,7 +90,6 @@
   margin: 0px; 
   padding: 0px;
   overflow: hidden;
-  margin-bottom: 10px;
 }
 .main::after {
   content: '';
@@ -123,11 +140,15 @@
 .input_parent {
   display: flex;
   gap: 0px;
-  width: 60%;
+  width: 100%;
   height: 40px;
   background-color: white;
   align-items: center;
   border-radius: 0px;
+  margin-left: 10px;
+}
+.input_parent::before {
+  content: url("../public/icon.ico");
 }
 .search_bar {
   flex-grow: 1;
@@ -135,6 +156,7 @@
   color: black;
   font-size: 18px;
   font-weight: 400;
+  width: 100%;
   padding-left: 10px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   padding-right: 10px; 
   border-top-right-radius: 20px;
@@ -156,7 +178,8 @@
   justify-content: center;
   align-items: center;
 }
-.input_parent:focus-within  {
+.input_parent:focus-within .search_image {
+  transform: scale(1.01);
   /* box-shadow: -1px 3px 5px 0px black; */
-  outline: 1px solid black;
+  /* border-left: 1px solid black; border-right: 1px solid black; */
 }

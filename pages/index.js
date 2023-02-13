@@ -62,7 +62,7 @@ function SearchBar(searchcontent){
     // Returning this as JSX
     return (
       <>
-        <a href={url} className={styles.travel_card}>
+        <a href={url} target={"_blank"} className={styles.travel_card}>
           <Image 
             src={`/travel/${image}`}
             draggable={false}
@@ -139,7 +139,7 @@ export default function Home() {
   // this is for the search bar
   const search_db = (event) => {
     const search_bar = document.getElementById("search_bar");
-    if (event.key.toLowerCase() != "enter" || search_bar.value == undefined || search_bar.value == "") return false;
+    if (event.key.toLowerCase() != "enter") return false;
     // ELSE
     setResults(SearchBar(String(search_bar.value).toLowerCase()));
   };
@@ -157,7 +157,7 @@ export default function Home() {
         <title>Traveller</title>
         <meta name="description" content="Travel Generator" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/icon.ico" />
       </Head>
       <header className={styles.main}>
         <Image 
@@ -194,17 +194,20 @@ export default function Home() {
           {/* this is the main title that is meant to catch the readers eye */}
           <div className={styles.main_title}>
             Travel The World
+
+            <div className={styles.search_image_parent}>
+              <Image 
+                src={white_search}
+                width={35}
+                height={35}
+                draggable={false}
+                priority={true}
+                onClick={scrollSearch}
+                title="Search"
+                className={styles.search_image}
+              />
+            </div>
           </div>
-          <Image 
-            src={white_search}
-            width={35}
-            height={35}
-            draggable={false}
-            priority={true}
-            onClick={scrollSearch}
-            title="Search"
-            className={styles.search_image}
-          />
       </div>
       <div className={styles.search_title}>
         <div className={styles.input_parent}>
