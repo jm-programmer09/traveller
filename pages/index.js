@@ -166,7 +166,7 @@ export default function Home() {
       {/* this is the loader here */}
       {mainLoader}
       {/* this is the content that will be shown after the loading effect has happend */}
-      <header className={styles.main}>
+      <header className={styles.main} id="main">
         {/* <Image 
           src={first}
           alt="background image"
