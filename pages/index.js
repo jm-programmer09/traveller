@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '@/styles/Home.module.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 // We dont need useEffect anymore because we got rid of the Javascript animation on document load
 // FYI the import above used to look like: import { useState, useEffect } from 'react';
 
@@ -133,7 +133,27 @@ export default function Home() {
     searchbar.scrollIntoView({behavior: "smooth"});
     searchbar.focus();
   };
-
+  // this is for the loading part
+  const [mainLoader, setLoader] = useState(
+    <>
+      <div className={styles.mainLoader}>
+        <div className={styles.three_body}>
+          <div className={styles.three_body__dot}></div>
+          <div className={styles.three_body__dot}></div>
+          <div className={styles.three_body__dot}></div>
+        </div>
+      </div>
+    </>
+  ); // inside is where i have the JSX for the loader
+  // the equivalent of a document.onload function
+  const TIMER = 2000; // this is the time that it will wait before it shows the main content, it is in milliseconds
+  useEffect(() => {
+    const waitInterval = setInterval(function () {
+      setLoader(<></>); // clearing the loader
+      clearInterval(waitInterval); // making sure that the interval does not run again
+    }, TIMER);
+  }, []);
+    
   // THis is the main return that renders the HTML
   return (
     <>
@@ -143,6 +163,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/icon.ico" />
       </Head>
+      {/* this is the loader here */}
+      {mainLoader}
+      {/* this is the content that will be shown after the loading effect has happend */}
       <header className={styles.main}>
         {/* <Image 
           src={first}
