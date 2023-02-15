@@ -71,9 +71,13 @@
   border-radius: 6px;
   box-shadow: 4px 3px 12px 2px grey;
 }
+@keyframes card_hover {
+  from {transform: scale(1);}
+  to {transform: scale(1.01);}
+}
 .travel_card:hover {
   cursor: pointer;
-  transform: scale(1.01);
+  animation: card_hover linear 100ms forwards;
 }
 .travel_icon {
   width: 100%;
