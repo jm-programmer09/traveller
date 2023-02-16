@@ -2,12 +2,13 @@ import Head from 'next/head';
 import Image from 'next/image';
 import styles from '@/styles/Home.module.css';
 import { useState, useEffect } from 'react';
-// We dont need useEffect anymore because we got rid of the Javascript animation on document load
-// FYI the import above used to look like: import { useState, useEffect } from 'react';
 
 // Images
 import search_icon from "@/public/search.svg";
 import white_search from "@/public/white_search.svg";
+import plan_image from "@/public/plan.svg";
+import relax_image from "@/public/relax.svg";
+import travel_image from "@/public/travel.svg";
 
 const db = require("./db.json");
 // TODO
@@ -217,6 +218,27 @@ export default function Home() {
               />
             </div>
           </div>
+      </div>
+      {/* this is the extra info bit || the content page */}
+      <div className={styles.extra_content}>
+        <Image 
+          src={plan_image}
+          alt="Plan your holiday"
+          className={styles.plan_image}
+          loading="lazy"
+        />
+        <Image 
+          src={travel_image}
+          alt="Travel to your destination"
+          className={styles.travel_image}
+          loading="lazy"
+        />
+        <Image 
+          src={relax_image}
+          alt="Relax"
+          className={styles.relax_image}
+          loading="lazy"
+        />
       </div>
       <div className={styles.search_title}>
         <div className={styles.input_parent}>
