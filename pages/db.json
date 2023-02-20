@@ -51,6 +51,120 @@
         "king",
         "david"
       ]
+    },
+    {
+      "title": "Beach House Motel",
+      "location": "Australia, Townsville",
+      "check_location": ["australia", "townsville"],
+      "image": "beach_house.webp",
+      "url": "https://www.beachhousemotel.com.au/",
+      "tags": [
+        "australia",
+        "motel",
+        "beach",
+        "townsville"
+      ]
+    },
+    {
+      "title": "The View Hotel",
+      "location": "Arizona, Navajo Tribal Park",
+      "check_location": ["arizona", "tribal", "park"],
+      "image": "theviewhotel.jpg",
+      "url": "https://monumentvalleyview.com/",
+      "tags": [
+        "america",
+        "usa",
+        "arizona",
+        "park",
+        "view",
+        "hotel",
+        "nature",
+        "desert"
+      ]
+    },
+    {
+      "title": "Montana Magica Lodge",
+      "location": "Chile, Huilo Huilo",
+      "check_location": ["chile", "huilo"],
+      "image": "huilo.jpg",
+      "url": "https://huilohuilo.com/en/where-to-stay/hotels/hotel-montana-magica/",
+      "tags": [
+        "chile",
+        "lodge",
+        "huilo",
+        "magic",
+        "forest",
+        "nature"
+      ]
+    },
+    {
+      "title": "Whitepod",
+      "location": "Switzerland, Monthey",
+      "check_location": ["switzerland", "monthey"],
+      "image": "whitepod.jpg",
+      "url": "https://www.whitepod.com/",
+      "tags": [
+        "unique",
+        "snow",
+        "nature",
+        "mountain",
+        "forest",
+        "whitepod",
+        "switzerland",
+        "monthey"
+      ]
+    },
+    {
+      "title": "Romantik Hotel Auf Der Wartburg",
+      "location": "Germany, Eisenach",
+      "check_location": ["germany", "eisenach"],
+      "image": "romantik.jpg",
+      "url": "https://go.skimresources.com/?id=2325X576383&isjs=1&jv=15.4.1-stackpath&sref=https%3A%2F%2Fwww.loveexploring.com%2Fgallerylist%2F79834%2Fmost-unusual-places-to-stay-in-the-world&url=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fde%2Fromantik-hotel-auf-der-wartburg.en-gb.html%3Faid%3D1280739&xs=1&xtz=-600&xuuid=3a123f1ca0532f74a7cc565044e67dcc&cci=c8d2191e9729e2d66b91f3f061f44ac2",
+      "tags": [
+        "germany",
+        "eisenach",
+        "romantic",
+        "mountain",
+        "old",
+        "castle"
+      ]
+    },
+    {
+      "title": "Kagga Kamma Nature Reserve",
+      "location": "South Africa, Locklynne",
+      "check_location": ["south africa", "africa", "lochlynne"],
+      "image": "kamma.jpg",
+      "url": "https://www.booking.com/hotel/za/kagga-kamma-nature-reserve.en-gb.html?aid=1280739",
+      "tags": [
+        "nature", 
+        "mountain",
+        "rock",
+        "arid",
+        "camping",
+        "sandstone",
+        "sand",
+        "nature",
+        "reserve",
+        "unique"
+      ]
+    },
+    {
+      "title": "The Guitar Hotel",
+      "location": "Florida, Hollywood",
+      "check_location": ["usa", "florida", "hollywood"],
+      "image": "guitarhotel.jpg",
+      "url": "https://www.seminolehardrockhollywood.com/hotel/the-guitar-hotel",
+      "tags": [
+        "hollywood",
+        "guitar",
+        "party",
+        "pool",
+        "usa",
+        "florida",
+        "hotel",
+        "fancy",
+        "luxury"
+      ]
     }
   ]
 }

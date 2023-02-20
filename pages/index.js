@@ -138,7 +138,7 @@ export default function Home() {
     const search_bar = document.getElementById("search_bar");
     setResults(SearchBar(String(search_bar.value).toLowerCase()));
   };
-  // this is for the loading part
+  // this is foyr the loading part
   const [mainLoader, setLoader] = useState(
     <>
       <div className={styles.mainLoader}>
