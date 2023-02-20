@@ -201,49 +201,57 @@ export default function Home() {
       </header>
       {/* this is all the main text and input things for the header, as if it is in the header than it changes how the images are shown */}
       <div className={styles.main_hover}>
-          {/* this is the main title that is meant to catch the readers eye */}
-          <div className={styles.main_title}>
-            Travel The World
-
-            <div className={styles.search_image_parent} onClick={scrollSearch}>
-              <Image 
-                src={white_search}
-                width={35}
-                height={35}
-                draggable={false}
-                priority={true}
-                onClick={scrollSearch}
-                title="Search"
-                className={styles.search_image}
-              />
-            </div>
+        {/* this is the main title that is meant to catch the readers eye */}
+        <div className={styles.main_title}>
+          Travel The World
+          <div className={styles.search_image_parent} onClick={scrollSearch}>
+            <Image
+              src={white_search}
+              width={35}
+              height={35}
+              draggable={false}
+              priority={true}
+              onClick={scrollSearch}
+              title="Search"
+              className={styles.search_image}
+            />
           </div>
+        </div>
       </div>
       {/* this is the extra info bit || the content page */}
       <div className={styles.extra_content}>
-        <Image 
-          src={plan_image}
-          alt="Plan your holiday"
-          className={styles.plan_image}
-          loading="lazy"
-        />
-        <Image 
-          src={travel_image}
-          alt="Travel to your destination"
-          className={styles.travel_image}
-          loading="lazy"
-        />
-        <Image 
-          src={relax_image}
-          alt="Relax"
-          className={styles.relax_image}
-          loading="lazy"
-        />
+        <div className={styles.row}>
+          <div>Start planning your travel...</div>
+          <Image
+            src={plan_image}
+            alt="Plan your holiday"
+            className={styles.plan_image}
+            loading="lazy"
+          />
+        </div>
+        <div className={styles.row}>
+          <div>Start your travel...</div>
+          <Image
+            src={travel_image}
+            alt="Travel to your destination"
+            className={styles.travel_image}
+            loading="lazy"
+          />
+        </div>
+        <div className={styles.row}>
+          <div>Start your relaxation</div>
+          <Image
+            src={relax_image}
+            alt="Relax"
+            className={styles.relax_image}
+            loading="lazy"
+          />
+        </div>
       </div>
       <div className={styles.search_title}>
         <div className={styles.input_parent}>
           <div className={styles.search_icon}>
-            <Image 
+            <Image
               src={search_icon}
               alt="Search"
               width={20}
@@ -252,10 +260,16 @@ export default function Home() {
             />
           </div>
           {/* thsi si where the user searches stuff up */}
-          <input id="search_bar" className={styles.search_bar} onKeyDown={search_db} placeholder="Find your next destination..." spellCheck={false}/>
+          <input
+            id="search_bar"
+            className={styles.search_bar}
+            onKeyDown={search_db}
+            placeholder="Find your next destination..."
+            spellCheck={false}
+          />
         </div>
       </div>
       {search_results}
     </>
-  )
+  );
 };
