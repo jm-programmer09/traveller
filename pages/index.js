@@ -134,6 +134,10 @@ export default function Home() {
     searchbar.scrollIntoView({behavior: "smooth"});
     searchbar.focus();
   };
+  const click_search = (event) => {
+    const search_bar = document.getElementById("search_bar");
+    setResults(SearchBar(String(search_bar.value).toLowerCase()));
+  };
   // this is for the loading part
   const [mainLoader, setLoader] = useState(
     <>
@@ -154,7 +158,7 @@ export default function Home() {
       clearInterval(waitInterval); // making sure that the interval does not run again
     }, TIMER);
   }, []);
-    
+
   // THis is the main return that renders the HTML
   return (
     <>
@@ -250,7 +254,7 @@ export default function Home() {
       </div>
       <div className={styles.search_title}>
         <div className={styles.input_parent}>
-          <div className={styles.search_icon}>
+          <div className={styles.search_icon} onClick={click_search}>
             <Image
               src={search_icon}
               alt="Search"
