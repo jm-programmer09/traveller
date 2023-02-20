@@ -225,7 +225,7 @@ export default function Home() {
           <Image
             src={plan_image}
             alt="Plan your holiday"
-            className={styles.plan_image}
+            className={styles.travel_image}
             loading="lazy"
           />
         </div>
@@ -238,12 +238,12 @@ export default function Home() {
             loading="lazy"
           />
         </div>
-        <div className={styles.row}>
-          <div>Start your relaxation</div>
+        <div className={`${styles.row} ${styles.no_after}`}>
+          <div>Start your relaxation...</div>
           <Image
             src={relax_image}
             alt="Relax"
-            className={styles.relax_image}
+            className={styles.travel_image}
             loading="lazy"
           />
         </div>

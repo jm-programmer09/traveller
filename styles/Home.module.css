@@ -201,9 +201,6 @@ opacity: 0.8;
   height: 70%;
   border-radius: 6px 6px 0px 0px;
 }
-.travel_image:hover {
-  transform: scale(0.98);
-}
 .card_location {
   font-size: 0.7em;
   font-weight: 600;
@@ -227,14 +224,24 @@ opacity: 0.8;
   align-items: center;
   justify-content: space-around;
   color: black;
-  font-size: 50px; 
+  font-size: 50px;
+  position: relative; 
   font-weight: 500;
 }
 .row::after {
   position: absolute;
+  bottom: 0px;
   content: '';
-  height: 1px; width: 90%;
-  
+  height: 1px; width: 80%;
+  background-color: black;
+  transition: width 200ms linear;
+}
+.row:hover::after {
+  transition: width 200ms linear;
+  width: 90%;
+}
+.no_after::after {
+  background-color: transparent !important;
 }
 /* top stuff */
 .main {
