@@ -165,6 +165,52 @@
         "fancy",
         "luxury"
       ]
+    },
+    {
+      "title": "Aurora Wagons",
+      "location": "Finland, Rovaniemi",
+      "check_location": ["finland", "rovaniemi"],
+      "image": "aurorawagons.jpg",
+      "url": "https://apukkaresort.fi/",
+      "tags": [
+        "aurora",
+        "wagons",
+        "finland",
+        "camping",
+        "camp",
+        "star"
+      ]
+    },
+    {
+      "title": "Dovecot Cottage",
+      "location": "Scotland, Edinburgh",
+      "check_location": ["edinburgh", "scotland"],
+      "image": "dovecotcottage.jpg",
+      "url": "https://www.coolstays.com/property/dovecot-cottage/18091",
+      "tags": [
+        "cottage",
+        "dovecot",
+        "old",
+        "heritage",
+        "garden",
+        "relax"
+      ]
+    },
+    {
+      "title": "Gondel Gisela",
+      "location": "Germany, Schulchsee",
+      "check_location": ["germany", "schulchsee"],
+      "image": "gondel.jpg",
+      "url": "https://hostunusual.com/property/gondel-gisela/",
+      "tags": [
+        "camp",
+        "camping",
+        "unusual",
+        "relax",
+        "forest",
+        "old",
+        "germany"
+      ] 
     }
   ]
 }
