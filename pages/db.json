@@ -171,7 +171,7 @@
       "location": "Finland, Rovaniemi",
       "check_location": ["finland", "rovaniemi"],
       "image": "aurorawagons.jpg",
-      "url": "https://apukkaresort.fi/",
+      "url": "aurora-wagons",
       "tags": [
         "aurora",
         "wagons",
@@ -186,7 +186,7 @@
       "location": "Scotland, Edinburgh",
       "check_location": ["edinburgh", "scotland"],
       "image": "dovecotcottage.jpg",
-      "url": "https://www.coolstays.com/property/dovecot-cottage/18091",
+      "url": "dovecot-cottage",
       "tags": [
         "cottage",
         "dovecot",

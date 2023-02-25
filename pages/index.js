@@ -58,7 +58,7 @@ function SearchBar(searchcontent){
     const title = info.title;
     const location = info.location;
     const image = info.image;
-    const url = info.url;
+    const url = "/book/" + info.url;
     // Returning this as JSX
     return (
       <>
