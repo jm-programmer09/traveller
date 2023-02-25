@@ -151,7 +151,7 @@ export default function Home() {
     </>
   ); // inside is where i have the JSX for the loader
   // the equivalent of a document.onload function
-  const TIMER = 2000; // this is the time that it will wait before it shows the main content, it is in milliseconds
+  const TIMER = 1500; // this is the time that it will wait before it shows the main content, it is in milliseconds
   useEffect(() => {
     const waitInterval = setInterval(function () {
       setLoader(<></>); // clearing the loader
