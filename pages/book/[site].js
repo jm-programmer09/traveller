@@ -3,7 +3,7 @@ import Head from "next/head";
 import styles from "@/styles/book/Document.module.css";
 import Image from "next/image";
 import logo from "@/public/icon.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // the main database in json format
 const db = require("../db.json");
@@ -17,61 +17,49 @@ const db = require("../db.json");
 export default function Home(){
   const router = useRouter();
   const site = router.query.site;
-
-  // have a loader to start with
-  const [results, setResults] = useState(
-    <>
-      <div className={styles.center_loader}>
-        <div className={styles.loader_parent}>
-          <div className={styles.three_body}>
-            <div className={styles.three_body__dot}></div>
-            <div className={styles.three_body__dot}></div>
-            <div className={styles.three_body__dot}></div>
-          </div>
-        </div>
-      </div>
-    </>
-  );
   
+  let display_results = <></>;
   let element = undefined;
+  // looping to see if there is an element that fits the search
   for (let elements of db.elements){
     if (elements.url == site){
-      element = elements;
-    }
-  }
-
+      display_results = (
+        <>
+          <Image 
+            src={`/travel/${elements.image}`}
+            alt={elements.title}
+            className={styles.display_image}
+            priority={false}
+            width={1280}
+            height={700}
+          />
+          <div className={styles.display_title}>
+            {elements.title}
+          </div>
+          <div className={styles.display_location}>
+            {elements.location}
+          </div>
+          <button className={styles.display_button}>Book Now</button>
+        </>
+      );
+      element = true;
+      break;
+    };
+  };
   if (element == undefined){
-    setResults(
+    display_results = (
       <>
         <div className={styles.center_not_found}>
-            No Results Found...
+          No Results Found...
         </div>
-      </>
-    );
-  } else {
-    setResults(
-      <>
-        <Image 
-          src={`/travel/${element.image}`}
-          alt={element.title}
-          className={styles.display_image}
-          priority={false}
-          width={1280}
-        />
-        <div className={styles.display_title}>
-          {element.title}
-        </div>
-        <div className={styles.display_location}>
-          {element.location}
-        </div>
-        <button className={styles.display_button}>Book Now</button>
       </>
     );
   };
+
   return (
     <>
       <Head>
-        <title>Traveller: {site}</title>
+        <title>Traveller</title>
         <link rel="icon" href="/icon.ico"/>
       </Head>
       {/* this is the search bar up at the top */}
@@ -84,7 +72,7 @@ export default function Home(){
         />
       </header>
       {/* this is the results section */}
-      {results}
+      <div className={styles.results}>{display_results}</div>
     </>
   );
 };
