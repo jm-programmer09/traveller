@@ -19,10 +19,15 @@
   align-items: center;
 }
 .center_not_found {
-
+  display: flex;
+  flex-direction: column;
+   color: black; font-size: 30px;
+  height: 500px;
+  justify-content: center;
+  align-items: center;
 }
 .display_image {
-  height: 700px;
+  height: 800px;
   width: 100%;
 }
 .display_title {
@@ -33,6 +38,12 @@
 }
 .display_button {
 
+}
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin: 20px;
 }
 
 

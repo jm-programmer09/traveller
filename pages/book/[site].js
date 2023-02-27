@@ -3,7 +3,7 @@ import Head from "next/head";
 import styles from "@/styles/book/Document.module.css";
 import Image from "next/image";
 import logo from "@/public/icon.svg";
-import { useEffect, useState } from "react";
+import error_404 from "@/public/404error.png";
 
 // the main database in json format
 const db = require("../db.json");
@@ -30,8 +30,8 @@ export default function Home(){
             alt={elements.title}
             className={styles.display_image}
             priority={false}
-            width={1280}
-            height={700}
+            width={40}
+            height={40}
           />
           <div className={styles.display_title}>
             {elements.title}
@@ -50,6 +50,12 @@ export default function Home(){
     display_results = (
       <>
         <div className={styles.center_not_found}>
+          <Image  
+            src={error_404}
+            alt="Error, search not found"
+            height={400}
+            width={400}
+          />
           No Results Found...
         </div>
       </>
