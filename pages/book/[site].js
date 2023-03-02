@@ -4,6 +4,7 @@ import styles from "@/styles/book/Document.module.css";
 import Image from "next/image";
 import logo from "@/public/icon.svg";
 import error_404 from "@/public/404error.png";
+import { useEffect, useState } from "react";
 
 // the main database in json format
 const db = require("../db.json");
@@ -64,6 +65,13 @@ export default function Home(){
     );
   };
 
+  
+  // The document.onload function pretty much
+  useEffect(() => {
+    const main_row = document.getElementById("main_row");
+    // the minus 44 is to make sure that the header height is considered
+    main_row.style.height = window.innerHeight - 44 + "px";
+  }, []);
   return (
     <>
       <Head>
@@ -72,15 +80,20 @@ export default function Home(){
       </Head>
       {/* this is the search bar up at the top */}
       <header className={styles.header}>
-        <Image 
-          src={logo}
-          alt="Traveller"
-          className={styles.header_logo}
-          priority={true}
-        />
+        <a href="/">
+            <Image 
+            src={logo}
+            alt="Traveller"
+            className={styles.header_logo}
+            priority={true}
+          />
+        </a>
       </header>
       {/* this is the results section */}
-      <div className={styles.results}>{display_results}</div>
+      <div className={styles.main_row} id="main_row">
+        <div className={styles.results}>{display_results}</div>
+        <div className={styles.search_results}></div>
+      </div>
     </>
   );
 };
