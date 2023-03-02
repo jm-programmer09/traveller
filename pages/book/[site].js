@@ -30,14 +30,16 @@ export default function Home(){
             alt={elements.title}
             className={styles.display_image}
             priority={false}
-            width={40}
-            height={40}
+            width={600}
+            height={400}
           />
-          <div className={styles.display_title}>
-            {elements.title}
-          </div>
-          <div className={styles.display_location}>
-            {elements.location}
+          <div className={styles.text}>
+            <div className={styles.display_title}>
+              {elements.title}
+            </div>
+            <div>
+              {elements.location}
+            </div>
           </div>
           <button className={styles.display_button}>Book Now</button>
         </>
