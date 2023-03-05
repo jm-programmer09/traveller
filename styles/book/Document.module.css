@@ -24,7 +24,7 @@
 .display_image {
   border-bottom: 1px solid black;
   width: 100%;
-  height: 1200px;
+  height: 70%;
 }
 .display_title {
   font-size: 30px;color: #0076a4;
@@ -53,8 +53,9 @@
   gap: 3px;
   background-color: white;
   border-right: 1px solid black;
-  width: 35%;
+  width: 40%;
   justify-content: space-between;
+  transition: width linear 50ms;
 }
 .text {
   height: 100%;
@@ -73,9 +74,94 @@
   display: flex;
   flex-direction: row;
 }
-
-
-
+@media only screen and (max-width: 600px){
+  .main_row {
+    display: flex;
+    flex-direction: column;
+  }
+  .results {
+    height: 700px;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 800px){
+  .results {
+    width: 60%;
+  }
+}
+/* this is for the search resutls */
+.search_results_parent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 20px;
+  min-height: 400px;
+  gap: 30px;
+}
+.travel_card {
+  width: 200px;
+  height: 300px;
+  background-color: white;
+  padding: .4em;
+  border-radius: 6px;
+  box-shadow: 4px 3px 12px 2px grey;
+}
+@keyframes card_hover {
+  from {transform: scale(1);}
+  to {transform: scale(1.01);}
+}
+.travel_card:hover {
+  cursor: pointer;
+  animation: card_hover linear 100ms forwards;
+}
+.travel_icon {
+  width: 100%;
+  height: 70%;
+  border-radius: 6px 6px 0px 0px;
+}
+.card_location {
+  font-size: 0.7em;
+  font-weight: 600;
+  color: rgb(63, 121, 230);
+  padding: 10px 7px 0px;
+}
+.card_title {
+  font-weight: 600;
+  color: rgb(88, 87, 87);
+  padding: 7px;
+}
+.search_results {
+  justify-content: center;
+  min-height: 400px;
+}
+.search_bar {
+  flex-grow: 1;
+  padding: 6px;
+  color: black;
+  font-size: 18px;
+  font-weight: 400;
+  width: 100%;
+  padding-left: 10px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  padding-right: 10px; 
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border: none;
+  outline: none;
+}
+.search_bar:focus {
+  outline: none;
+  border: none;
+}
+.search_icon {
+  background-color: white;
+  z-index: 10;
+  height: 40px; width: 50px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 
 
