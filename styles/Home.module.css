@@ -180,6 +180,9 @@ opacity: 0.8;
   min-height: 400px;
   gap: 30px;
 }
+.search_results {
+  min-height: 400px;
+}
 .travel_card {
   width: 200px;
   height: 300px;
@@ -212,11 +215,6 @@ opacity: 0.8;
   color: rgb(88, 87, 87);
   padding: 7px;
 }
-.search_results {
-  justify-content: center;
-  min-height: 400px;
-}
-
 /* the content stuff */
 .row {
   display: flex;

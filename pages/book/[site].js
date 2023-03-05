@@ -83,11 +83,9 @@ function SearchBar(searchcontent){
   if (element_list.length >= 1){
     return (
       <>
-        <div className={styles.search_results_parent}>
-          {element_list.map((element_info) => {
-            return TravelElement(element_info);
-          })}
-        </div>      
+        {element_list.map((element_info) => {
+          return TravelElement(element_info);
+        })}    
       </>
     );
   };
