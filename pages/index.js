@@ -9,6 +9,7 @@ import white_search from "@/public/white_search.svg";
 import plan_image from "@/public/plan.svg";
 import relax_image from "@/public/relax.svg";
 import travel_image from "@/public/travel.svg";
+import about_image from "@/public/travel_image.jpg";
 
 const db = require("./db.json");
 // TODO
@@ -220,6 +221,32 @@ export default function Home() {
             />
           </div>
         </div>
+      </div>
+      {/* these are the primary links of the page (the about me page link and a paragraph of little information above) */}
+      <div className={styles.about_content}>
+        <div className={styles.about_left}>
+          <div className={styles.mini_paragraph}>
+            Find the holiday of your dreams through Traveller's enchanced searching capabilities. 
+            <br/>
+            Learn about how Traveller can help you below
+          </div>
+        </div>
+        <Image 
+          src={about_image}
+          className={styles.about_image}
+          priority={true}
+          width={600}
+          height={400}
+          alt="travel image"
+        />
+        <Image 
+          priority={true}
+          alt="before travel image"
+          src="/travel_image1.jpg"
+          className={styles.about_image_before}
+          width={600}
+          height={400}
+        />
       </div>
       {/* this is the extra info bit || the content page */}
       <div className={styles.extra_content}>
