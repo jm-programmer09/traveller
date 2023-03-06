@@ -114,7 +114,12 @@ function SearchBar(searchcontent){
 // That is why if you tried to use this code in a .js file that is <script src="yourfile.js"></script>, it will not work and willl give you many errors
 // Also the import is like doing require(), though for module files like this one, you can use import instead (makes it simpler and more readable)
 // I would have liked to have made this with Typescript, however, if most people are already struggling understanding what this is doing, then I doubt a type-strict language like typescript would help that matter
-export default function Home() {
+export default function Home( { ip } ) {
+  console.log(ip);
+
+
+
+
   const [search_results, setResults] = useState(
     <>
       <div className={styles.search_results}>
@@ -331,3 +336,7 @@ export default function Home() {
     </>
   );
 };
+Home.getInitialProps = async ({req}) => {
+  const ip = req.headers["x-real-ip"] || req.connection.remoteAddress;
+  return { ip };
+}
