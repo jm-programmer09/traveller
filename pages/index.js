@@ -230,6 +230,12 @@ export default function Home() {
             <br/>
             Learn about how Traveller can help you below
           </div>
+          <svg className={styles.about_svg} viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#08BDBA" d="M46.1,-61.4C58.6,-54.4,66.6,-39.3,70,-23.9C73.4,-8.5,72.1,7.3,68.7,23.8C65.3,40.2,59.8,57.5,48,63.1C36.2,68.7,18.1,62.6,5.3,55.4C-7.5,48.1,-15.1,39.6,-25.9,33.7C-36.8,27.8,-51,24.5,-53.9,17.1C-56.9,9.8,-48.5,-1.6,-44.9,-15.2C-41.4,-28.8,-42.6,-44.6,-35.9,-53.5C-29.2,-62.3,-14.6,-64.3,1.1,-65.8C16.8,-67.4,33.7,-68.4,46.1,-61.4Z" transform="translate(100 100)" />
+          </svg>
+          <a href="/about" className={styles.about_button}>
+            About Traveller
+          </a>
         </div>
         <Image 
           src={about_image}
