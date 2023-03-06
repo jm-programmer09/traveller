@@ -84,6 +84,7 @@
   padding: .4em;
   border-radius: 6px;
   box-shadow: 4px 3px 12px 2px grey;
+  border: none;
 }
 @keyframes card_hover {
   from {transform: scale(1);}

@@ -60,7 +60,7 @@ function SearchBar(searchcontent){
     // Returning this as JSX
     return (
       <>
-        <a href={url} target={"_blank"} className={styles.travel_card}>
+        <a href={url} className={styles.travel_card}>
           <Image 
             src={`/travel/${image}`}
             draggable={false}
