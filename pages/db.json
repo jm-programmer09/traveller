@@ -1,6 +1,17 @@
 {
   "elements": [
     {
+      "title": "Fogo Island Inn",
+      "location": "Canada, Newfoundland and Labrador",
+      "check_location": ["canada", "newfoundland", "new", "labrador"],
+      "image": "fogo_island.jpg",
+      "url": "fogo-island",
+      "tags": [
+        "island", "canada", "fogo", "inn", "cold", "ice", "rock",
+        "isolated", "isolate"
+      ]
+    },
+    {
       "title": "Apartments On Maggie",
       "location": "Australia, Magnetic Island",
       "check_location": ["australia", "magnetic", "island"],
@@ -211,6 +222,71 @@
         "old",
         "germany"
       ] 
+    },
+    {
+      "title": "Secluded Treehouse",
+      "location": "Atlanta, Georgia, USA",
+      "check_location": ["atlanta", "georgia", "usa", "us"],
+      "image": "secluded_treehouse.jpg",
+      "url": "secluded-treehouse",
+      "tags": [
+        "treehouse", "tree", "forest", "usa", "georgia", "atlanta",
+        "house", "private"
+      ]
+    },
+    {
+      "title": "The Seashell House",
+      "location": "Isla Mujeres, Mexico",
+      "check_location": ["isla", "mejures", "mexico"],
+      "image": "seashell_house.jpg",
+      "url": "seashell-house",
+      "tags": [
+        "seashell", "modern", "pool", "mexico", "luxury"
+      ]
+    },
+    {
+      "title": "Bawah Reserve",
+      "location": "Riau Archipelago, Indonesia",
+      "check_location": ["riau", "archipelago", "indonesia"],
+      "image": "riau_indonesia.jpg",
+      "url": "riau-archipelago",
+      "tags": [
+        "island", "beach", "pool", "indonesia", "tropical", "private",
+        "forest", "nature"
+      ]
+    }, 
+    {
+      "title": "Over the Moon",
+      "location": "La Plagne, France",
+      "check_location": ["la", "plagne", "france"],
+      "image": "la_plagne.jpg",
+      "url": "la_plagne-france",
+      "tags": [
+        "snow", "cold", "nature", "france", "french", 
+        "ski", "adventure"
+      ]
+    }, 
+    {
+      "title": "Conrad Maldives Rangali Island",
+      "location": "The Maldives",
+      "check_location": ["the", "maldives"],
+      "image": "conrad_island.jpg",
+      "url": "rangali_island",
+      "tags": [
+        "island", "tropical", "private", "luxury", 
+        "ocean", "beach", "swim", "pool"
+      ]
+    },
+    {
+      "title": "The Brando",
+      "location": "Tahiti",
+      "check_location": ["tahiti"],
+      "image": "the_brando.jpg",
+      "url": "the-brando",
+      "tags": [
+        "tropical", "beach", "pool", "private", "luxury",
+        "ocean"
+      ]
     }
   ]
 }
