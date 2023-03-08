@@ -163,7 +163,9 @@ export default function Home(){
     const main_row = document.getElementById("main_row");
     // the minus 44 is to make sure that the header height is considered
     main_row.style.height = window.innerHeight - 44 + "px";
-
+    
+    // this is to load everything when the page starts
+    setResults(SearchBar(""));
     // THis is then for the onenter keydown await on the search bar
     document.getElementById("search_bar").addEventListener("keydown", (event) => {
       if (event.key.toLowerCase() == "enter"){
@@ -176,7 +178,7 @@ export default function Home(){
     const input = document.getElementById("search_bar");
     setResults(SearchBar(input.value));
   }
-
+ 
   return (
     <>
       <Head>
