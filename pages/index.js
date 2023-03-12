@@ -118,8 +118,6 @@ export default function Home( { ip } ) {
   console.log(ip);
 
 
-
-
   const [search_results, setResults] = useState(
     <>
       <div className={styles.search_results}>

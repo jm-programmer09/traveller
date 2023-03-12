@@ -1,0 +1,22 @@
+.header {
+  position: fixed; top: 0px; right: 0px; left: 0px; padding: 6px;
+  background-color: white;border-bottom: 1px solid rgb(50, 50, 50);
+  font-size: 30px;
+  display: flex; flex-direction: row;
+  align-items: center;
+  margin-bottom: 60px;
+}
+.return {
+  display: flex;
+  transition: all linear 50ms;
+  justify-content: center;align-items: center;
+}
+.return:hover {
+  border-radius: 100%;
+  transform: scale(1.1);
+}
+.title {
+  display: flex; justify-content: center; text-align: center;
+  align-items: center; flex-grow: 1;
+  font-weight: 400;
+}
