@@ -20,3 +20,19 @@
   align-items: center; flex-grow: 1;
   font-weight: 400;
 }
+.text {
+  display: flex;
+  align-items: center;
+  margin-top: 70px;
+  flex-direction: column;
+}
+.title_text {
+  color: #d63113;
+  display: block;
+  text-align: center;
+  font-size: 70px; font-weight: 500;
+}
+.lower {
+  display: block;
+  text-align: left;
+}

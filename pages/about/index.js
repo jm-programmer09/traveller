@@ -25,6 +25,12 @@ export default function Document(){
         </a>
         <div className={styles.title}>About Traveller</div>
       </header>
+      <div className={styles.text}>
+        <div className={styles.title_text}>Making Holiday Planning Effortless</div>
+        <div className={styles.lower}>Start exploring every corner of the world with Traveller today</div>
+        {/* Traveller is a website designed to make booking your next holiday travel effortless. Find spectacular holiday destinations that you wouldn't find on other sites in a matter of seconds. Make holiday booking easier with Traveller
+        Explore unique locations, experience every part of the world through the best accommodation and make sure that you have a good time */}
+      </div>
     </>
   );
 };
